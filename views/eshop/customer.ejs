@@ -1,0 +1,32 @@
+<%- include("header", {title: title}); %>
+
+<h1>Customer details</h1>
+
+<p>This is details for customers.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<p></p>
+
+<table>
+    <tr>
+        <th>customer id</th>
+        <th>name</th>
+        <th>address</th>
+        <th>contact info</th>
+        <th>create order</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.kundID %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.adress %></td>
+        <td><%= row.kontaktuppgifter %></td>
+        <td>
+            <a href="/eshop/customer/<%= row.kundID %>/create-order"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

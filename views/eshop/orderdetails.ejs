@@ -1,0 +1,52 @@
+<%- include("header", {title: "Order Details"}); %>
+
+<h1>Order Details for Order ID: <%= order.orderID %></h1>
+
+<p><strong>Order Date:</strong> <%= order.orderdatum %></p>
+<p><strong>Customer ID:</strong> <%= order.kundID %></p>
+<p><strong>Status:</strong> <%= order.status %></p>
+
+<h2>Order Items</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price per item</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (order.orderLines.length > 0) { %>
+            <% order.orderLines.forEach(line => { %>
+                <tr>
+                    <td><%= line.produktNamn %></td>
+                    <td><%= line.antal %></td>
+                    <td><%= line.pris %></td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="2">No items found</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<!-- Formulär för att lägga till produkter till ordern -->
+<h2>Add Products to Order</h2>
+<form method="POST" action="/eshop/order/<%= order.orderID %>/add-products">
+    <div id="products">
+        <% products.forEach(product => { %>
+            <div>
+                <label for="product_<%= product.produktID %>">
+                    <%= product.namn %> - Price: <%= product.pris %>
+                </label>
+                <input type="number" name="products[<%= product.produktID %>]" id="product_<%= product.produktID %>" min="0" placeholder="Quantity">
+            </div>
+        <% }) %>
+    </div>
+    <button type="submit">Add Products</button>
+</form>
+
+
+<%- include("footer"); %>

@@ -1,0 +1,22 @@
+<%- include("header", {title: title}); %>
+
+<h1>Category details</h1>
+
+<p>This is details for category.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<table>
+    <tr>
+        <th>Category ID</th>
+        <th>Name</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.kategoriID %></td>
+        <td><%= row.namn %></td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

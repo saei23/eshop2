@@ -1,0 +1,36 @@
+<%- include("header", {title: title}); %>
+
+<h1>Delete product</h1>
+
+<p>This is details for product <%= Produkt %>.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<% res = res[0] %>
+<form class="label-left" method="post" action="/eshop/delete">
+    <fieldset>
+        <legend>Delete product</legend>
+
+        <label for="id">id</label>
+        <input id="id" type="number" name="id" readonly value="<%= res.produktID %>"><br>
+
+        <label for="name">name</label>
+        <input id="name" type="text" name="name" readonly value="<%= res.namn %>"><br>
+
+        <label for="price">price</label>
+        <input id="price" type="number" name="price" readonly value="<%= res.pris %>"><br>
+
+        <label for="description">description</label>
+        <input id="description" type="text" name="description" readonly value="<%= res.beskrivning %>"><br>
+
+        <label for="manufacturer">manufacturer</label>
+        <input id="manufacturer" type="text" name="manufacturer" readonly value="<%= res.tillverkare %>"><br>
+
+        <label for="categoryID">categoryID</label>
+        <input id="categoryID" type="number" name="categoryID" readonly value="<%= res.kategoriID %>"><br>
+
+        <input type="submit" name="doit" value="Delete Product">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

@@ -1,0 +1,33 @@
+<%- include("header", {title: title}); %>
+
+<h1>Create new product</h1>
+
+<p>Create a new product holder.</p>
+
+<form class="label-left" method="post">
+    <fieldset>
+        <legend>Create product</legend>
+
+        <label for="id">productID</label>
+        <input id="id" type="number" name="id"><br>
+
+        <label for="name">name</label>
+        <input id="name" type="text" name="name"><br>
+
+        <label for="price">price</label>
+        <input id="price" type="number" name="price"><br>
+
+        <label for="description">description</label>
+        <input id="description" type="text" name="description"><br>
+
+        <label for="manufacturer">manufacturer</label>
+        <input id="manufacturer" type="text" name="manufacturer"><br>
+
+        <label for="categoryID">categoryID</label>
+        <input id="categoryID" type="number" name="categoryID"><br>
+
+        <input type="submit" name="doit" value="Create">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

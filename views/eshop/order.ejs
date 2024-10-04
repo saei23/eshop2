@@ -1,0 +1,42 @@
+<%- include("header", {title: title}); %>
+
+<h1>Order Details</h1>
+
+<p>This is details for orders.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<p></p>
+
+<table>
+    <tr>
+        <th>order id</th>
+        <th>order date</th>
+        <th>customer id</th>
+        <th>total items</th>
+        <th>status</th>
+        <th>show details</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.orderID %></td>
+        <td><%= new Date(row.orderdatum).toISOString().split('T')[0] %></td>
+        <td><%= row.kundID %></td>
+        <td><%= row.totalt_antal_orderrader %></td>
+        <td><%= row.status %></td>
+        <td>
+            <!-- Länk till orderdetaljer -->
+            <a href="/eshop/order/details/<%= row.orderID %>" title="View Details">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+            </a>
+
+            <!-- Länk till att redigera orderstatus -->
+            <a href="/eshop/order/edit/<%= row.orderID %>" title="Edit Status">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>

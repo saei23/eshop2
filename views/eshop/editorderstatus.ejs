@@ -1,0 +1,17 @@
+<%- include("header", {title: "Edit Order Status"}); %>
+
+<h1>Edit Status for Order ID: <%= orderID %></h1>
+
+<form method="POST" action="/eshop/order/edit/<%= orderID %>">
+    <label for="status">Order Status:</label>
+    <select id="status" name="status">
+        <option value="Pending" <%= status === 'Pending' ? 'selected' : '' %>>Pending</option>
+        <option value="Beställd" <%= status === 'Beställd' ? 'selected' : '' %>>Beställd</option>
+        <option value="Skickad" <%= status === 'Skickad' ? 'selected' : '' %>>Skickad</option>
+        <option value="Levererad" <%= status === 'Levererad' ? 'selected' : '' %>>Levererad</option>
+        <option value="Avbruten" <%= status === 'Avbruten' ? 'selected' : '' %>>Avbruten</option>
+    </select>
+    <button type="submit">Update Status</button>
+</form>
+
+<%- include("footer"); %>

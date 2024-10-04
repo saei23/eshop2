@@ -1,0 +1,9 @@
+produktID,namn,pris,beskrivning,tillverkare,kategoriID
+11,The Dark Side of the Moon,129.99,Classic Pink Floyd album,Pink Floyd,111
+22,Thriller,99.99,Iconic Michael Jackson album,Michael Jackson,111
+33,Abbey Road,89.99,Legendary Beatles album,The Beatles,111
+44,The Godfather,19.99,Classic movie directed by Francis Ford Coppola,Francis Ford Coppola,222
+55,Pulp Fiction,14.99,Quentin Tarantino's masterpiece,Quentin Tarantino,222
+66,The White Album,79.99,Double album by The Beatles,The Beatles,333
+77,Sgt. Pepper's Lonley Hearts Club Band,84.99,Iconic Beatles album',The Beatles,333
+88,Led Zeppelin IV,74.99,Fourth studio album by Led Zeppelin',Led Zeppelin,333

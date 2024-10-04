@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<h1>Create Order for Customer <%= kundID %></h1>
+
+
+<form method="POST" action="/eshop/customer/<%= kundID %>/create-order">
+    <p>Orderdatum: <%= new Date().toISOString().split('T')[0] %></p>
+    <input type="hidden" name="orderdatum" value="<%= new Date().toISOString().split('T')[0] %>">
+
+    <!-- Välj produkter och ange kvantiteter -->
+    <h2>Select Products</h2>
+    <div id="products">
+        <% products.forEach(product => { %>
+            <div>
+                <label for="product_<%= product.produktID %>">
+                    <%= product.namn %> - Price: <%= product.pris %>
+                </label>
+                <input type="number" name="products[<%= product.produktID %>]" id="product_<%= product.produktID %>" min="0" placeholder="Quantity">
+            </div>
+        <% }) %>
+    </div>
+
+    <button type="submit">Create Order</button>
+</form>
+
+<%- include("footer"); %>

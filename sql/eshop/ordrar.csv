@@ -1,0 +1,6 @@
+orderID,orderdatum,leveransdatum,status,kundID
+1,2024-09-01,2024-09-05,Beställd,69
+2,2024-09-02,2024-09-06,Skickad,23
+3,2024-09-03,2024-09-07,Pending,30
+4,2024-09-04,2024-09-08,Beställd,42
+5,2024-09-05,2024-09-09,Skickad,58

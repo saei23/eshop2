@@ -1,0 +1,9 @@
+<%- include("header", { title: `Order Status - ${order.orderID}` }); %>
+
+<h1>Order Status for Order ID: <%= order.orderID %></h1>
+
+<p><strong>Status:</strong> <%= order.status %></p>
+
+<a href="/eshop/order/edit/<%= order.orderID %>">Edit Status</a>
+
+<%- include("footer"); %>

@@ -1,0 +1,19 @@
+<%- include("header", {title: title}); %>
+
+<h1>Add Product to Order <%= orderID %></h1>
+
+<form method="POST" action="eshop/order/<%= orderID %>/add-product">
+    <label for="produktID">Product:</label>
+    <select name="produktID" id="produktID">
+        <% products.forEach(product => { %>
+            <option value="<%= product.produktID %>"><%= product.namn %></option>
+        <% }) %>
+    </select>
+
+    <label for="antal">Quantity:</label>
+    <input type="number" name="antal" id="antal" required>
+
+    <button type="submit">Add Product</button>
+</form>
+
+<%- include("footer"); %>

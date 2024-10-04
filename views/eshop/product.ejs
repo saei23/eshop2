@@ -1,0 +1,39 @@
+<%- include("header", {title: title}); %>
+
+<h1>Product details</h1>
+
+<p>This is details for products.</p>
+
+<pre><%#= JSON.stringify(res, null, 4) %></pre>
+
+<p></p>
+
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>description</th>
+        <th>manufacturer</th>
+        <th>categoryID</th>
+        <th>stock quantity</th>
+        <th>action</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.produktID %></td>
+        <td><%= row.namn %></td>
+        <td><%= row.pris %></td>
+        <td><%= row.beskrivning %></td>
+        <td><%= row.tillverkare %></td>
+        <td><%= row.kategoriID %></td>
+        <td><%= row.antal_i_lagret %></td>
+        <td>
+            <a href="/eshop/edit/<%= row.produktID %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <a href="/eshop/delete/<%= row.produktID %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+<% }; %>
+</table>
+
+<%- include("footer"); %>
