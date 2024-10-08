@@ -1,4 +1,5 @@
-starta applikationen med:
+# Eshop2 i databas-kursen
+### Starta applikationen med:
 ```bash
 node index.js
 ```
